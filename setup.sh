@@ -1,3 +1,15 @@
+sudo apt-get update
+
+# Install apt pkgs
+sudo apt-get install -y \
+    less \
+    curl \
+    build-essential \
+    software-properties-common \
+    libssl-dev \
+    libffi-dev \
+    ca-certificates
+
 # Node
 curl -sL https://deb.nodesource.com/setup_8.x | sudo bash
 
@@ -8,23 +20,15 @@ sudo add-apt-repository \
    "deb [arch=amd64] https://download.docker.com/linux/$(. /etc/os-release; echo "$ID") \
    $(lsb_release -cs) \
    stable"
-
+   
 sudo apt-get update
-
-# Install apt pkgs
+    
 sudo apt-get install -y \
     nodejs \
-    build-essential \
     python3-pip \
-    libssl-dev \
-    libffi-dev \
     python3-dev \
     python3-venv
-    apt-transport-https \
-    ca-certificates \
-    curl \
     gnupg2 \
-    software-properties-common \
     docker-ce \
     certbot
 
@@ -46,6 +50,3 @@ source bin/activate
 pip install jupyterhub notebook dockerspawner
 
 wget https://raw.githubusercontent.com/logston/jupyterhub-setup/master/jupyterhub_config.py
-
-sudo ./bin/jupyterhub
-
