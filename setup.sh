@@ -45,7 +45,7 @@ source bin/activate
 
 pip install jupyterhub notebook dockerspawner
 
-wget 
+wget https://raw.githubusercontent.com/logston/jupyterhub-setup/master/jupyterhub_config.py
 
 sudo ./bin/jupyterhub
 
