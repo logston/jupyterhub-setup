@@ -1,0 +1,12 @@
+[Unit]
+Description=JupyterHub Server
+
+
+[Service]
+User=root
+Group=root
+
+ExecStart=/srv/jupyterhub/bin/jupyterhub -f /srv/jupyterhub/jupyterhub_config.py
+
+[Install]
+WantedBy=multi-user.target
