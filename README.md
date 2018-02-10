@@ -12,4 +12,8 @@ Then run
 
 Then run 
 
-    sudo /srv/jupyterhub/bin/jupyterhub -f /srv/jupyterhub/jupyterhub_config.py
+    asdfasdf
+
+OR for temporary running
+
+    sudo /srv/jupyterhub/bin/jupyterhub -f /srv/jupyterhub/jupyterhub_config.py    
