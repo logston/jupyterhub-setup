@@ -12,8 +12,6 @@ Then run
 
 Then run 
 
-    asdfasdf
+    sudo systemctl start jupyterhub.service
 
-OR for temporary running
-
-    sudo /srv/jupyterhub/bin/jupyterhub -f /srv/jupyterhub/jupyterhub_config.py    
+Done.
