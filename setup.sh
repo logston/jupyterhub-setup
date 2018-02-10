@@ -34,6 +34,7 @@ sudo add-apt-repository \
    stable"
 sudo apt-get update
 sudo apt-get install -y docker-ce
+sudo usermod -aG docker $USER
 
 # Certbot
 sudo apt-get install certbot -t stretch-backports
