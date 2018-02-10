@@ -58,3 +58,4 @@ wget https://raw.githubusercontent.com/logston/jupyterhub-setup/master/jupyterhu
 
 # Install Systemd script
 sudo wget https://raw.githubusercontent.com/logston/jupyterhub-setup/master/systemd_jupyterhub.service -O /lib/systemd/system/jupyterhub.service
+sudo systemctl enable jupyterhub.service
