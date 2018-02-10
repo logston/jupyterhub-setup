@@ -39,11 +39,8 @@ sudo apt-get install -y docker-ce
 sudo apt-get install certbot -t stretch-backports
 
 ### BUILD APPLICATION
-# TLS cert
-sudo certbot certonly --standalone --preferred-challenges http -d jupyter.fun
-
 # Pull docker images
-docker pull jupyterhub/singleuser
+sudo docker pull jupyterhub/singleuser
 
 # Make application dir
 sudo mkdir -p /srv/jupyterhub
@@ -53,7 +50,7 @@ sudo chown -R $USER:$USER /srv/jupyterhub
 cd /srv/jupyterhub
 python3 -m venv .
 source bin/activate
-pip install jupyterhub notebook dockerspawner
+pip install jupyterhub notebook dockerspawner jupyterhub-tmpauthenticator
 
 # Install config
 wget https://raw.githubusercontent.com/logston/jupyterhub-setup/master/jupyterhub_config.py
