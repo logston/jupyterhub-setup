@@ -37,7 +37,7 @@ sudo apt-get install -y docker-ce
 sudo usermod -aG docker $USER
 
 # Certbot
-sudo apt-get install certbot -t stretch-backports
+sudo apt-get install -y certbot -t stretch-backports
 
 ### BUILD APPLICATION
 # Pull docker images
