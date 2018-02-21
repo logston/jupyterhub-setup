@@ -24,7 +24,7 @@ c.JupyterHub.reset_db = True
 c.JupyterHub.spawner_class = 'dockerspawner.DockerSpawner'
 
 # Spawner Specific Settings
-c.DockerSpawner.image = 'jupyterhub/singleuser:latest'
+c.DockerSpawner.image = 'logston/tutorial:latest'
 c.DockerSpawner.network_name = 'bridge'
 c.DockerSpawner.container_ip = "0.0.0.0"
 
