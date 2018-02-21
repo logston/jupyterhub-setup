@@ -1,4 +1,5 @@
 # Configuration file for jupyterhub.
+c.JupyterHub.log_level = 'DEBUG'
 
 ## Class for authenticating users.
 c.JupyterHub.authenticator_class = 'tmpauthenticator.TmpAuthenticator'
@@ -24,6 +25,8 @@ c.JupyterHub.reset_db = True
 c.JupyterHub.spawner_class = 'dockerspawner.DockerSpawner'
 
 # Spawner Specific Settings
+c.Spawner.debug = True
+#c.DockerSpawner.image = 'jupyterhub/singleuser:latest'
 c.DockerSpawner.image = 'logston/tutorial:latest'
 c.DockerSpawner.network_name = 'bridge'
 c.DockerSpawner.container_ip = "0.0.0.0"

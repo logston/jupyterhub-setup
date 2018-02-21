@@ -21,9 +21,16 @@ RUN service postgresql start && \
 RUN rm bank.sql
 RUN rm -rf work
 
-RUN echo "service postgresql start" > start-notebook.sh.new
-RUN cat /usr/local/bin/start-notebook.sh >> start-notebook.sh.new
-RUN mv start-notebook.sh.new /usr/local/bin/start-notebook.sh
+COPY start-notebook.sh /usr/local/bin/
+RUN chown $NB_UID:$NB_GID /usr/local/bin/start-notebook.sh
+RUN chmod 700 /usr/local/bin/start-notebook.sh
 
-RUN rm -rf start-notebook.sh.new
+RUN echo "$NB_USER ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/notebook
+
+# Configure container startup
+ENTRYPOINT ["tini", "--"]
+CMD ["start-notebook.sh"]
+
+# Switch back to jovyan to avoid accidental container runs as root
+USER $NB_UID
 
