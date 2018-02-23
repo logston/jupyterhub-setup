@@ -10,6 +10,9 @@ RUN apt-get install -y \
         postgresql \
         postgresql-contrib
 
+RUN apt-get install -y git
+RUN apt-get install -y vim
+
 RUN echo "local all all trust" > /etc/postgresql/9.5/main/pg_hba.conf
 
 RUN service postgresql start && \
